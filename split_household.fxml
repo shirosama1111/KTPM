@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demo4.controllers.SplitHouseholdController"
+      spacing="15" style="-fx-background-color: #f5f5f5;">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <!-- HEADER -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label fx:id="lblOriginalHousehold" text="✂️ TÁCH HỘ KHẨU"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="❌ Hủy" onAction="#handleCancel"/>
+    </HBox>
+
+    <Separator/>
+
+    <!-- HAI BẢNG -->
+    <HBox spacing="15" VBox.vgrow="ALWAYS">
+        <!-- Bảng 1: Tất cả thành viên -->
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <Label text="👥 Thành viên hiện tại"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <TableView fx:id="tableAllMembers" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colNameAll" text="Họ tên" prefWidth="200"/>
+                    <TableColumn fx:id="colRelationAll" text="Quan hệ" prefWidth="100"/>
+                    <TableColumn fx:id="colCccdAll" text="CCCD" prefWidth="120"/>
+                </columns>
+            </TableView>
+            <Label text="💡 Chọn nhiều người bằng Ctrl+Click"
+                   style="-fx-font-size: 12px; -fx-text-fill: #666;"/>
+        </VBox>
+
+        <!-- NÚT DI CHUYỂN -->
+        <VBox spacing="10" alignment="CENTER">
+            <Button text="➡️" onAction="#moveToNewHousehold" prefWidth="60" prefHeight="40"
+                    style="-fx-font-size: 20px;"/>
+            <Button text="⬅️" onAction="#moveBackToOriginal" prefWidth="60" prefHeight="40"
+                    style="-fx-font-size: 20px;"/>
+        </VBox>
+
+        <!-- Bảng 2: Hộ mới -->
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <Label text="🏠 Hộ mới (sẽ tách ra)"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <TableView fx:id="tableNewMembers" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colNameNew" text="Họ tên" prefWidth="200"/>
+                    <TableColumn fx:id="colRelationNew" text="Quan hệ" prefWidth="100"/>
+                    <TableColumn fx:id="colCccdNew" text="CCCD" prefWidth="120"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+
+    <!-- THÔNG TIN HỘ MỚI -->
+    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">
+        <Label text="📝 Thông tin hộ mới" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <GridPane hgap="10" vgap="10">
+            <Label text="Địa chỉ mới:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="tfNewAddress" promptText="Nhập địa chỉ hộ mới..."
+                       GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="400"/>
+
+            <Label text="Ghi chú:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextArea fx:id="taNote" promptText="Lý do tách hộ, ghi chú..."
+                      GridPane.columnIndex="1" GridPane.rowIndex="1" prefHeight="80" prefWidth="400"/>
+        </GridPane>
+
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button text="✅ Xác nhận tách hộ" onAction="#handleSplit"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px;"/>
+            <Button text="❌ Hủy" onAction="#handleCancel"/>
+        </HBox>
+    </VBox>
+
+</VBox>

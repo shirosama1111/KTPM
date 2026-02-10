@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<?import java.lang.String?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo4.controllers.HouseholdCustomerController"
+            style="-fx-background-color: #f5f7fa;">
+
+    <top>
+        <VBox spacing="0" style="-fx-background-color: #f5f7fa;">
+            <padding>
+                <Insets top="25" right="30" bottom="10" left="30"/>
+            </padding>
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 0 0 10 0;">
+                <Label text="🏡" style="-fx-font-size: 24px;"/>
+                <Label text="Hộ Khẩu Của Bạn"
+                       style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Button text="🏠 Menu"
+                        onAction="#backToMenu"
+                        style="-fx-background-color: #ecf0f1;
+                               -fx-text-fill: #7f8c8d;
+                               -fx-font-size: 14px;
+                               -fx-font-weight: 600;
+                               -fx-background-radius: 6;
+                               -fx-padding: 8 15;
+                               -fx-cursor: hand;">
+                    <styleClass>
+                        <String fx:value="button-cancel"/>
+                    </styleClass>
+                </Button>
+            </HBox>
+            <Separator style="-fx-background-color: #e0e6ed;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" style="-fx-padding: 20 30 20 30; -fx-background-color: #f5f7fa;">
+            <TableView fx:id="table" VBox.vgrow="ALWAYS"
+                       style="-fx-background-color: white;
+                              -fx-border-color: #dce1e8;
+                              -fx-border-radius: 6;
+                              -fx-background-radius: 6;">
+                <columns>
+                    <TableColumn fx:id="colName"
+                                 text="Họ tên"
+                                 prefWidth="180"/>
+                    <TableColumn fx:id="colCccd"
+                                 text="CCCD"
+                                 prefWidth="150"/>
+
+                    <TableColumn fx:id="colDob"
+                                 text="Ngày sinh"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="colRelation"
+                                 text="Quan hệ"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="colJob"
+                                 text="Nghề nghiệp"
+                                 prefWidth="200"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <stylesheets>
+        <String fx:value="../../../css/household_customer.css"/>
+    </stylesheets>
+
+</BorderPane>

@@ -1,0 +1,119 @@
+/* Citizen Management Styles */
+
+/* Search field */
+.search-field:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #3498db60, 8, 0.5, 0, 2);
+}
+
+.search-field:hover {
+    -fx-border-color: #5dade2;
+}
+
+/* Search button */
+.btn-search:hover {
+    -fx-background-color: #2980b9;
+    -fx-effect: dropshadow(gaussian, #3498db60, 8, 0.5, 0, 2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.btn-search:pressed {
+    -fx-background-color: #21618c;
+}
+
+/* Refresh button */
+.btn-refresh:hover {
+    -fx-background-color: #7f8c8d;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.btn-refresh:pressed {
+    -fx-background-color: #626567;
+}
+
+/* Table styling */
+.table-view-custom {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+.table-view-custom .column-header {
+    -fx-background-color: #f8f9fa;
+    -fx-text-fill: #34495e;
+    -fx-font-weight: 600;
+    -fx-font-size: 13px;
+    -fx-padding: 12px;
+}
+
+.table-view-custom .table-row-cell:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+.table-view-custom .table-row-cell:selected {
+    -fx-background-color: #e3f2fd;
+}
+
+.table-view-custom .table-cell {
+    -fx-padding: 10px;
+    -fx-font-size: 13px;
+}
+
+/* Footer buttons */
+.btn-add:hover {
+    -fx-background-color: #229954;
+    -fx-effect: dropshadow(gaussian, #27ae6060, 8, 0.5, 0, 2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.btn-add:pressed {
+    -fx-background-color: #1e8449;
+}
+
+.btn-edit:hover {
+    -fx-background-color: #e67e22;
+    -fx-effect: dropshadow(gaussian, #f39c1260, 8, 0.5, 0, 2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.btn-edit:pressed {
+    -fx-background-color: #d35400;
+}
+
+.btn-delete:hover {
+    -fx-background-color: #c0392b;
+    -fx-effect: dropshadow(gaussian, #e74c3c60, 8, 0.5, 0, 2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.btn-delete:pressed {
+    -fx-background-color: #a93226;
+}
+
+.btn-menu:hover {
+    -fx-background-color: #2c3e50;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.btn-menu:pressed {
+    -fx-background-color: #1a252f;
+}
+
+/* Focus removal */
+.search-field:focused,
+.btn-search:focused,
+.btn-refresh:focused,
+.btn-add:focused,
+.btn-edit:focused,
+.btn-delete:focused,
+.btn-menu:focused {
+    -fx-background-insets: 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}

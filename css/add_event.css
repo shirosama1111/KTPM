@@ -1,0 +1,148 @@
+/* TextField custom styles - Focus effect */
+.text-field-custom:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #3498db80, 8, 0.5, 0, 2);
+}
+
+.text-field-custom:hover {
+    -fx-border-color: #5dade2;
+}
+
+/* DatePicker custom styles - Focus effect */
+.date-picker-custom:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #3498db80, 8, 0.5, 0, 2);
+}
+
+.date-picker-custom:hover {
+    -fx-border-color: #5dade2;
+}
+
+/* DatePicker arrow button styling */
+.date-picker-custom .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.date-picker-custom .arrow-button .arrow {
+    -fx-background-color: #34495e;
+}
+
+/* Button success - Hover and press effects */
+.button-success {
+    -fx-cursor: hand;
+}
+
+.button-success:hover {
+    -fx-background-color: #229954;
+    -fx-effect: dropshadow(gaussian, #27ae6066, 10, 0.6, 0, 3);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.button-success:pressed {
+    -fx-background-color: #1e8449;
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+    -fx-effect: none;
+}
+
+/* Button cancel - Hover and press effects */
+.button-cancel {
+    -fx-cursor: hand;
+}
+
+.button-cancel:hover {
+    -fx-background-color: #d5dbdb;
+    -fx-text-fill: #2c3e50;
+}
+
+.button-cancel:pressed {
+    -fx-background-color: #bdc3c7;
+}
+
+/* Separator styling */
+.separator .line {
+    -fx-border-color: #e0e6ed;
+    -fx-border-width: 1px;
+}
+
+/* Remove default blue focus ring from all controls */
+.text-field-custom:focused,
+.date-picker-custom:focused,
+.button-success:focused,
+.button-cancel:focused {
+    -fx-background-insets: 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* TextField and DatePicker background when focused */
+.text-field-custom:focused,
+.date-picker-custom:focused {
+    -fx-background-color: white;
+}
+
+/* Smooth transitions for all interactive elements */
+.text-field-custom,
+.date-picker-custom,
+.button-success,
+.button-cancel {
+    -fx-transition: all 0.2s ease;
+}
+
+/* ComboBox custom styles */
+.combo-box-custom:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #3498db80, 8, 0.5, 0, 2);
+}
+
+.combo-box-custom:hover {
+    -fx-border-color: #5dade2;
+}
+
+.combo-box-custom .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #34495e;
+}
+
+.combo-box-custom .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box-custom .arrow-button .arrow {
+    -fx-background-color: #34495e;
+}
+
+/* TextArea custom styles */
+.text-area-custom {
+    -fx-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.text-area-custom:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #3498db80, 8, 0.5, 0, 2);
+}
+
+.text-area-custom:hover {
+    -fx-border-color: #5dade2;
+}
+
+.text-area-custom .content {
+    -fx-background-color: white;
+}
+
+.text-area-custom .scroll-pane {
+    -fx-background-color: white;
+}
+
+.text-area-custom .scroll-pane .viewport {
+    -fx-background-color: white;
+}
+
+.text-area-custom .scroll-pane .content {
+    -fx-background-color: white;
+}

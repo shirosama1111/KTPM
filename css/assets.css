@@ -1,0 +1,75 @@
+/* Assets Management Styles */
+
+/* Table styling */
+.table-view-custom {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+.table-view-custom .column-header {
+    -fx-background-color: #f8f9fa;
+    -fx-text-fill: #34495e;
+    -fx-font-weight: 600;
+    -fx-font-size: 13px;
+    -fx-padding: 12px;
+}
+
+.table-view-custom .table-row-cell:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+.table-view-custom .table-row-cell:selected {
+    -fx-background-color: #e3f2fd;
+}
+
+.table-view-custom .table-cell {
+    -fx-padding: 10px;
+    -fx-font-size: 13px;
+}
+
+/* Inline form fields */
+.text-field-inline:focused,
+.combo-box-inline:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #3498db60, 6, 0.4, 0, 1);
+}
+
+.text-field-inline:hover,
+.combo-box-inline:hover {
+    -fx-border-color: #5dade2;
+}
+
+/* Add button */
+.btn-add:hover {
+    -fx-background-color: #229954;
+    -fx-effect: dropshadow(gaussian, #27ae6060, 8, 0.5, 0, 2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.btn-add:pressed {
+    -fx-background-color: #1e8449;
+}
+
+/* Return button */
+.btn-return:hover {
+    -fx-background-color: #2980b9;
+    -fx-effect: dropshadow(gaussian, #3498db60, 8, 0.5, 0, 2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.btn-return:pressed {
+    -fx-background-color: #21618c;
+}
+
+/* Focus removal */
+.text-field-inline:focused,
+.combo-box-inline:focused,
+.btn-add:focused,
+.btn-return:focused {
+    -fx-background-insets: 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}

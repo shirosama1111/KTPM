@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.control.Button?>
+<Pane fx:id="rootPane" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.demo4.controllers.WelcomeController"
+      prefWidth="800" prefHeight="500" style="-fx-background-color: black;">
+
+    <!-- Hộp ? -->
+    <ImageView fx:id="box"
+               layoutX="400" layoutY="250"
+               fitWidth="100" fitHeight="100"/>
+
+    <!-- Mario -->
+    <ImageView fx:id="mario"
+               layoutX="50" layoutY="300"
+               fitWidth="200" fitHeight="150"/>
+
+    <!-- Text bật ra -->
+    <Text fx:id="successText"
+          text="LOGIN SUCCESS!"
+          layoutX="300" layoutY="220"
+          fill="yellow"
+          style="-fx-font-size: 32px; -fx-font-weight: bold;"
+          opacity="0"/>
+
+    <!-- Text cuộn cuối -->
+    <Text fx:id="scrollText"
+          text="Welcome to the system!&#10;Loading dashboard..."
+          textAlignment="CENTER"
+          layoutX="800" layoutY="500"
+          fill="white"
+          style="-fx-font-size: 22px;"
+          opacity="0"
+    />
+
+    <Button fx:id="btnSkip"
+            text="Skip"
+            onAction="#onSkip"
+            layoutX="700"
+            layoutY="20"/>
+
+</Pane>

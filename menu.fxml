@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: #f5f7fa;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.demo4.controllers.MenuController">
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox alignment="CENTER_RIGHT" spacing="15" style="-fx-background-color: white;                      -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);                      -fx-padding: 16 25;">
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <HBox alignment="CENTER" spacing="12">
+                <Label style="-fx-font-size: 18px;" text="👤" />
+                <VBox spacing="2">
+                    <Label style="-fx-font-size: 11px;                                   -fx-text-fill: #7f8c8d;" text="Xin chào," />
+                    <Label fx:id="lblUsername" style="-fx-font-weight: bold;                                   -fx-font-size: 14px;                                   -fx-text-fill: #2c3e50;" />
+                </VBox>
+            </HBox>
+
+            <Separator orientation="VERTICAL" style="-fx-padding: 0 8;" />
+
+            <MenuButton style="-fx-background-color: #f8f9fa;                                -fx-text-fill: #34495e;                                -fx-font-size: 13px;                                -fx-font-weight: 600;                                -fx-background-radius: 6;                                -fx-padding: 8 16;                                -fx-cursor: hand;" styleClass="menu-button-custom" text="⚙ Tài khoản">
+                <items>
+                    <MenuItem onAction="#openAccountProfile" style="-fx-padding: 8 20;" text="📋 Quản lý tài khoản" />
+                    <MenuItem onAction="#logout" style="-fx-padding: 8 20;" text="🚪 Đăng xuất" />
+                </items>
+            </MenuButton>
+
+        </HBox>
+    </top>
+
+    <!-- CENTER -->
+    <center>
+        <VBox alignment="CENTER" spacing="0" style="-fx-padding: 60 40;">
+
+            <!-- Welcome Section -->
+            <VBox alignment="CENTER" spacing="12" style="-fx-padding: 0 0 50 0;">
+                <Label style="-fx-font-size: 56px;" text="🏛" />
+                <Label style="-fx-font-size: 32px;                               -fx-font-weight: bold;                               -fx-text-fill: #2c3e50;" text="Hệ Thống Quản Lý" />
+                <Label style="-fx-font-size: 15px;                               -fx-text-fill: #7f8c8d;" text="Chọn chức năng để tiếp tục" />
+            </VBox>
+
+            <!-- Menu Cards -->
+            <HBox alignment="CENTER" spacing="30">
+
+                <!-- Card 1: Quản lý Nhà Văn Hóa -->
+                <VBox fx:id="cardCustomer" onMouseClicked="#goToManagement" spacing="0" style="-fx-background-color: white;-fx-background-radius: 12;-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5);                              -fx-padding: 35 40;                              -fx-cursor: hand;                              -fx-min-width: 240;                              -fx-min-height: 200;" styleClass="menu-card">
+
+                    <VBox alignment="CENTER" spacing="15">
+                        <Label style="-fx-font-size: 48px;" text="🏢" />
+                        <Label style="-fx-font-size: 16px;-fx-font-weight: bold;-fx-text-fill: #2c3e50;-fx-text-alignment: center;-fx-wrap-text: true;" text="Quản lý Nhà Văn Hóa" />
+                        <Label style="-fx-font-size: 12px;-fx-text-fill: #7f8c8d;-fx-text-alignment: center;" text="Lịch sự kiện • Đặt phòng" />
+                    </VBox>
+                </VBox>
+
+                <!-- Card 1.2: Quản lý Tài khoản -->
+                <VBox fx:id="cardAdmin" onMouseClicked="#goToManagement" spacing="0" style="-fx-background-color: white;-fx-background-radius: 12;-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5);                              -fx-padding: 35 40;                              -fx-cursor: hand;                              -fx-min-width: 240;                              -fx-min-height: 200;" styleClass="menu-card">
+
+                    <VBox alignment="CENTER" spacing="15">
+                        <Label style="-fx-font-size: 48px;" text="🏢" />
+                        <Label style="-fx-font-size: 16px;-fx-font-weight: bold;-fx-text-fill: #2c3e50;-fx-text-alignment: center;-fx-wrap-text: true;" text="Quản lý tài khoản" />
+                        <Label style="-fx-font-size: 12px;-fx-text-fill: #7f8c8d;-fx-text-alignment: center;" text="Tài khoản • Mật khẩu" />
+                    </VBox>
+                </VBox>
+
+                <!-- Card 2: Quản lý Công Dân -->
+                <VBox onMouseClicked="#goToCitizenManagement" spacing="0" style="-fx-background-color: white;                              -fx-background-radius: 12;                              -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5);                              -fx-padding: 35 40;                              -fx-cursor: hand;                              -fx-min-width: 240;                              -fx-min-height: 200;" styleClass="menu-card">
+
+                    <VBox alignment="CENTER" spacing="15">
+                        <Label style="-fx-font-size: 48px;" text="👥" />
+                        <Label style="-fx-font-size: 16px;                                       -fx-font-weight: bold;                                       -fx-text-fill: #2c3e50;                                       -fx-text-alignment: center;                                       -fx-wrap-text: true;" text="Quản lý Công Dân" />
+                        <Label style="-fx-font-size: 12px;                                       -fx-text-fill: #7f8c8d;                                       -fx-text-alignment: center;" text="Hộ khẩu • Nhân khẩu" />
+                    </VBox>
+                </VBox>
+
+            </HBox>
+
+        </VBox>
+    </center>
+
+
+</BorderPane>

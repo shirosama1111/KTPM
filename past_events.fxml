@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<?import java.lang.String?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo4.controllers.PastEventsController"
+            style="-fx-background-color: #f5f7fa;">
+
+    <top>
+        <VBox spacing="0" style="-fx-background-color: #f5f7fa;">
+            <padding>
+                <Insets top="25" right="30" bottom="10" left="30"/>
+            </padding>
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 0 0 10 0;">
+                <Label text="📅" style="-fx-font-size: 24px;"/>
+                <Label text="Sự Kiện Đã Qua (Trên 30 Ngày)"
+                       style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            </HBox>
+            <Separator style="-fx-background-color: #e0e6ed;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" style="-fx-padding: 20 30 20 30; -fx-background-color: #f5f7fa;">
+            <TableView fx:id="tblPastEvents" VBox.vgrow="ALWAYS"
+                       style="-fx-background-color: white;
+                              -fx-border-color: #dce1e8;
+                              -fx-border-radius: 6;
+                              -fx-background-radius: 6;">
+                <columns>
+                    <TableColumn fx:id="colTitle" text="Tiêu Đề" prefWidth="220"/>
+                    <TableColumn fx:id="colDate" text="Ngày" prefWidth="130"/>
+                    <TableColumn fx:id="colLocation" text="Địa Điểm" prefWidth="220"/>
+                    <TableColumn fx:id="colStatus" text="Trạng Thái" prefWidth="140"/>
+                </columns>
+            </TableView>
+
+            <Label fx:id="lblMessage"
+                   style="-fx-text-fill: #e74c3c;
+                          -fx-font-size: 12px;
+                          -fx-font-weight: 600;"/>
+        </VBox>
+    </center>
+
+    <stylesheets>
+        <String fx:value="../../../css/past_events.css"/>
+    </stylesheets>
+
+</BorderPane>
