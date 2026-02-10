@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demo4.controllers.CitizenHistoryController"
+      spacing="15" style="-fx-background-color: #f5f5f5;">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <!-- HEADER -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label fx:id="lblCitizenInfo" text="📜 Lịch sử thay đổi"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="🔄 Làm mới" onAction="#refresh"/>
+        <Button text="❌ Đóng" onAction="#close"/>
+    </HBox>
+
+    <Separator/>
+
+    <!-- BẢNG LỊCH SỬ -->
+    <VBox spacing="5" VBox.vgrow="ALWAYS">
+        <HBox spacing="10">
+            <Button text="👁️ Xem chi tiết" onAction="#viewDetails"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+        </HBox>
+
+        <TableView fx:id="table" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colChangeType" text="Loại thay đổi" prefWidth="150"/>
+                <TableColumn fx:id="colChangeDate" text="Ngày thay đổi" prefWidth="120"/>
+                <TableColumn fx:id="colFromHousehold" text="Từ hộ khẩu" prefWidth="200"/>
+                <TableColumn fx:id="colToHousehold" text="Đến hộ khẩu" prefWidth="200"/>
+                <TableColumn fx:id="colNote" text="Ghi chú" prefWidth="250"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+</VBox>

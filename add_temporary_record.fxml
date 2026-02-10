@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demo4.controllers.AddTemporaryRecordController"
+      spacing="15" style="-fx-background-color: #f5f5f5;">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <!-- HEADER -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="📝 CẤP GIẤY TẠM VẮNG / TẠM TRÚ"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <Separator/>
+
+    <!-- FORM -->
+    <VBox spacing="15">
+        <!-- Chọn công dân -->
+        <VBox spacing="5">
+            <Label text="Công dân *" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="cbCitizen" prefWidth="400"/>
+        </VBox>
+
+        <!-- Loại -->
+        <VBox spacing="5">
+            <Label text="Loại *" style="-fx-font-weight: bold;"/>
+            <HBox spacing="15">
+                <RadioButton fx:id="rbTamVang" text="Tạm vắng"/>
+                <RadioButton fx:id="rbTamTru" text="Tạm trú"/>
+            </HBox>
+        </VBox>
+
+        <!-- Ngày bắt đầu -->
+        <VBox spacing="5">
+            <Label text="Từ ngày *" style="-fx-font-weight: bold;"/>
+            <DatePicker fx:id="dpStartDate" prefWidth="200"/>
+        </VBox>
+
+        <!-- Ngày kết thúc -->
+        <VBox spacing="5">
+            <Label text="Đến ngày" style="-fx-font-weight: bold;"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <DatePicker fx:id="dpEndDate" prefWidth="200"/>
+                <CheckBox fx:id="cbNoExpiry" text="Không thời hạn"/>
+            </HBox>
+        </VBox>
+
+        <!-- Địa điểm -->
+        <VBox spacing="5">
+            <Label text="Địa điểm *" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="tfLocation" promptText="Nhập địa điểm..." prefWidth="400"/>
+        </VBox>
+
+        <!-- Ghi chú -->
+        <VBox spacing="5">
+            <Label text="Ghi chú" style="-fx-font-weight: bold;"/>
+            <TextArea fx:id="taNote" promptText="Ghi chú thêm..."
+                      prefHeight="80" prefWidth="400" wrapText="true"/>
+        </VBox>
+    </VBox>
+
+    <!-- BUTTONS -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="✅ Lưu" onAction="#handleSave" prefWidth="120"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        <Button text="❌ Hủy" onAction="#handleCancel" prefWidth="120"/>
+    </HBox>
+
+</VBox>

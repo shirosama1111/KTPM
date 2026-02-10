@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: linear-gradient(to bottom right, #667eea, #764ba2);" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.demo4.controllers.LoginController">
+
+    <center>
+        <VBox alignment="CENTER" maxWidth="420" spacing="0" style="-fx-background-color: white;-fx-background-radius: 16;-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 30, 0, 0, 10);">
+
+            <padding>
+                <Insets bottom="40" left="40" right="40" top="40" />
+            </padding>
+
+            <!-- Logo & Title -->
+            <VBox alignment="CENTER" spacing="8" style="-fx-padding: 0 0 30 0;">
+                <Label style="-fx-font-size: 48px;" text="🏛" />
+                <Label style="-fx-font-size: 24px;-fx-font-weight: bold;-fx-text-fill: #2c3e50;" text="Hệ thống quản lý" />
+                <Label style="-fx-font-size: 13px;-fx-text-fill: #7f8c8d;" text="Đăng nhập để tiếp tục" />
+            </VBox>
+
+            <!-- Username -->
+            <VBox spacing="6" style="-fx-padding: 0 0 18 0;">
+                <Label style="-fx-font-size: 13px;-fx-font-weight: 600;-fx-text-fill: #34495e;" text="Tên đăng nhập" />
+                <TextField fx:id="txtUsername" prefWidth="340" promptText="Nhập tên đăng nhập" style="-fx-background-color: #f8f9fa;-fx-border-color: #e0e6ed;-fx-border-radius: 8;-fx-background-radius: 8;-fx-padding: 12 16;-fx-font-size: 14px;-fx-prompt-text-fill: #95a5a6;" styleClass="text-field-login" />
+            </VBox>
+
+            <!-- Password -->
+            <VBox spacing="6" style="-fx-padding: 0 0 8 0;">
+                <Label style="-fx-font-size: 13px;-fx-font-weight: 600;-fx-text-fill: #34495e;" text="Mật khẩu" />
+                <PasswordField fx:id="txtPassword" prefWidth="340" promptText="Nhập mật khẩu" style="-fx-background-color: #f8f9fa;-fx-border-color: #e0e6ed;-fx-border-radius: 8;-fx-background-radius: 8;-fx-padding: 12 16;-fx-font-size: 14px;-fx-prompt-text-fill: #95a5a6;" styleClass="text-field-login" />
+            </VBox>
+
+            <!-- Error Message -->
+            <Label fx:id="lblMessage" style="-fx-text-fill: #e74c3c;-fx-font-size: 12px;-fx-font-weight: 600;-fx-padding: 0 0 20 0;" />
+
+            <!-- Buttons -->
+            <VBox spacing="12" style="-fx-padding: 12 0 0 0;">
+                <Button onAction="#onLogin" prefWidth="340" style="-fx-background-color: #667eea;-fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold; -fx-background-radius: 8;  -fx-padding: 14 0; -fx-cursor: hand;" styleClass="button-primary" text="Đăng nhập" />
+
+                <Button onAction="#onShowRegister" prefWidth="340" style="-fx-background-color: white;-fx-text-fill: #667eea;-fx-border-color: #667eea;-fx-border-width: 2px;-fx-font-size: 14px;-fx-font-weight: 600;-fx-background-radius: 8;-fx-border-radius: 8;-fx-padding: 12 0;-fx-cursor: hand;" styleClass="button-secondary" text="Đăng ký tài khoản mới" />
+            </VBox>
+
+        </VBox>
+    </center>
+</BorderPane>

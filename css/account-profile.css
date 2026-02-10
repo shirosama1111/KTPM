@@ -1,0 +1,60 @@
+/* Add Household Styles */
+
+.text-field-custom:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #3498db80, 8, 0.5, 0, 2);
+}
+
+.text-field-custom:hover {
+    -fx-border-color: #5dade2;
+}
+
+.combo-box-custom:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #3498db80, 8, 0.5, 0, 2);
+}
+
+.combo-box-custom:hover {
+    -fx-border-color: #5dade2;
+}
+
+.button-success {
+    -fx-cursor: hand;
+}
+
+.button-success:hover {
+    -fx-background-color: #229954;
+    -fx-effect: dropshadow(gaussian, #27ae6066, 10, 0.6, 0, 3);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.button-success:pressed {
+    -fx-background-color: #1e8449;
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+}
+
+.button-cancel {
+    -fx-cursor: hand;
+}
+
+.button-cancel:hover {
+    -fx-background-color: #d5dbdb;
+    -fx-text-fill: #2c3e50;
+}
+
+.button-cancel:pressed {
+    -fx-background-color: #bdc3c7;
+}
+
+.text-field-custom:focused,
+.combo-box-custom:focused,
+.button-success:focused,
+.button-cancel:focused {
+    -fx-background-insets: 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}

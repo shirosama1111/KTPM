@@ -1,0 +1,61 @@
+/* Assign Account Styles */
+
+/* Table styling */
+.table-view-custom {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+.table-view-custom .column-header {
+    -fx-background-color: #f8f9fa;
+    -fx-text-fill: #34495e;
+    -fx-font-weight: 600;
+    -fx-font-size: 13px;
+    -fx-padding: 12px;
+}
+
+.table-view-custom .table-row-cell:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+.table-view-custom .table-row-cell:selected {
+    -fx-background-color: #e8daef;
+}
+
+.table-view-custom .table-cell {
+    -fx-padding: 10px;
+    -fx-font-size: 13px;
+}
+
+/* ComboBox */
+.combo-box-custom:focused {
+    -fx-border-color: #9b59b6;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #9b59b680, 8, 0.5, 0, 2);
+}
+
+.combo-box-custom:hover {
+    -fx-border-color: #af7ac5;
+}
+
+/* Assign button */
+.btn-assign:hover {
+    -fx-background-color: #8e44ad;
+    -fx-effect: dropshadow(gaussian, #9b59b680, 10, 0.6, 0, 3);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.btn-assign:pressed {
+    -fx-background-color: #7d3c98;
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+}
+
+/* Focus removal */
+.combo-box-custom:focused,
+.btn-assign:focused {
+    -fx-background-insets: 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.demo4.controllers.ReturnAssetController"
+      spacing="0"
+      style="-fx-background-color: #f5f7fa;">
+
+    <padding>
+        <Insets top="25" right="30" bottom="25" left="30"/>
+    </padding>
+
+    <!-- Header -->
+    <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 0 0 20 0;">
+        <Label text="🔄" style="-fx-font-size: 24px;"/>
+        <Label text="Trả Tài Sản"
+               style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+    </HBox>
+
+    <Separator style="-fx-background-color: #e0e6ed; -fx-padding: 0 0 20 0;"/>
+
+    <!-- Table Container -->
+    <VBox spacing="10">
+        <Label text="Danh Sách Tài Sản Đang Thuê"
+               style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+        <TableView fx:id="tblBookingAssets"
+                   prefHeight="220"
+                   style="-fx-background-color: white;
+                          -fx-border-color: #dce1e8;
+                          -fx-border-radius: 6;
+                          -fx-background-radius: 6;">
+            <columns>
+                <TableColumn fx:id="colAsset" text="Tài Sản" prefWidth="200"/>
+                <TableColumn fx:id="colQty" text="Số Lượng Thuê" prefWidth="120"/>
+                <TableColumn fx:id="colReturned" text="Đã Trả" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <Separator style="-fx-background-color: #e0e6ed; -fx-padding: 0 0 20 0;"/>
+
+    <!-- Form Container -->
+    <VBox spacing="18">
+        <Label fx:id="lblAssetInfo"
+               style="-fx-font-size: 14px; -fx-text-fill: #34495e;"/>
+
+        <!-- Số lượng trả -->
+        <VBox spacing="6">
+            <Label text="Số lượng trả *"
+                   style="-fx-font-size: 13px; -fx-font-weight: 600; -fx-text-fill: #34495e;"/>
+            <TextField fx:id="tfReturnedQty"
+                       promptText="Nhập số lượng trả"
+                       style="-fx-background-color: white;
+                              -fx-border-color: #dce1e8;
+                              -fx-border-radius: 6;
+                              -fx-background-radius: 6;
+                              -fx-padding: 10 12;
+                              -fx-font-size: 13px;
+                              -fx-prompt-text-fill: #95a5a6;">
+                <styleClass>
+                    <String fx:value="text-field-custom"/>
+                </styleClass>
+            </TextField>
+        </VBox>
+
+        <!-- Tình trạng khi nhận về -->
+        <VBox spacing="6">
+            <Label text="Tình trạng khi nhận về"
+                   style="-fx-font-size: 13px; -fx-font-weight: 600; -fx-text-fill: #34495e;"/>
+            <TextArea fx:id="taConditionIn"
+                      promptText="Mô tả tình trạng khi trả tài sản..."
+                      prefHeight="80"
+                      wrapText="true"
+                      style="-fx-background-color: white;
+                             -fx-border-color: #dce1e8;
+                             -fx-border-radius: 6;
+                             -fx-background-radius: 6;
+                             -fx-padding: 10 12;
+                             -fx-font-size: 13px;
+                             -fx-prompt-text-fill: #95a5a6;">
+                <styleClass>
+                    <String fx:value="text-area-custom"/>
+                </styleClass>
+            </TextArea>
+        </VBox>
+    </VBox>
+
+    <!-- Spacer -->
+    <Region VBox.vgrow="ALWAYS" minHeight="20"/>
+
+    <!-- Buttons -->
+    <HBox spacing="12" alignment="CENTER" style="-fx-padding: 15 0 0 0;">
+        <Button text="✓ Xác Nhận Trả"
+                onAction="#handleConfirmReturn"
+                prefWidth="140"
+                style="-fx-background-color: #27ae60;
+                       -fx-text-fill: white;
+                       -fx-font-size: 14px;
+                       -fx-font-weight: bold;
+                       -fx-background-radius: 6;
+                       -fx-padding: 12 20;
+                       -fx-cursor: hand;">
+            <styleClass>
+                <String fx:value="button-success"/>
+            </styleClass>
+        </Button>
+
+        <Button text="✕ Hủy"
+                onAction="#handleCancel"
+                prefWidth="120"
+                style="-fx-background-color: #ecf0f1;
+                       -fx-text-fill: #7f8c8d;
+                       -fx-font-size: 14px;
+                       -fx-font-weight: 600;
+                       -fx-background-radius: 6;
+                       -fx-padding: 12 20;
+                       -fx-cursor: hand;">
+            <styleClass>
+                <String fx:value="button-cancel"/>
+            </styleClass>
+        </Button>
+    </HBox>
+
+    <!-- Footer note -->
+    <Label text="* Trường bắt buộc"
+           style="-fx-font-size: 11px;
+                  -fx-text-fill: #95a5a6;
+                  -fx-padding: 15 0 0 0;"/>
+
+</VBox>

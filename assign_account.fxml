@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: #f5f7fa;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.demo4.controllers.AssignAccountController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: white;                      -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);                      -fx-padding: 20 25;">
+            <Label style="-fx-font-size: 24px;" text="🔗" />
+            <Label style="-fx-font-size: 22px;                           -fx-font-weight: bold;                           -fx-text-fill: #2c3e50;" text="Gán Tài Khoản Cho Công Dân" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="25" style="-fx-padding: 25;">
+
+            <!-- Section 1: Citizens without account -->
+            <VBox spacing="12" style="-fx-background-color: white;                          -fx-border-color: #dce1e8;                          -fx-border-radius: 8;                          -fx-background-radius: 8;                          -fx-padding: 20;">
+
+                <Label style="-fx-font-size: 16px;                               -fx-font-weight: 600;                               -fx-text-fill: #2c3e50;" text="1. Công Dân Chưa Có Tài Khoản" />
+
+                <TableView fx:id="tblCitizens" prefHeight="280" styleClass="table-view-custom">
+                    <columns>
+                        <TableColumn fx:id="colName" prefWidth="280" text="Họ và tên" />
+                        <TableColumn fx:id="colCCCD" prefWidth="180" style="-fx-alignment: CENTER;" text="Số CCCD" />
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <!-- Section 2: Select account -->
+            <VBox spacing="12" style="-fx-background-color: white;                          -fx-border-color: #dce1e8;                          -fx-border-radius: 8;                          -fx-background-radius: 8;                          -fx-padding: 20;">
+
+                <Label style="-fx-font-size: 16px;                               -fx-font-weight: 600;                               -fx-text-fill: #2c3e50;" text="2. Chọn Tài Khoản Để Gán" />
+
+                <ComboBox fx:id="cmbUsers" prefWidth="400" promptText="Chọn tài khoản..." style="-fx-background-color: #f8f9fa;                                  -fx-border-color: #dce1e8;                                  -fx-border-radius: 6;                                  -fx-background-radius: 6;                                  -fx-padding: 10 12;                                  -fx-font-size: 14px;" styleClass="combo-box-custom" />
+
+                <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 10 0 0 0;">
+                    <Button onAction="#assignAccount" style="-fx-background-color: #9b59b6;                                    -fx-text-fill: white;                                    -fx-font-size: 15px;                                    -fx-font-weight: bold;                                    -fx-background-radius: 6;                                    -fx-padding: 12 24;                                    -fx-cursor: hand;" styleClass="btn-assign" text="✓ Gán Tài Khoản" />
+
+                    <Label fx:id="lblStatus" style="-fx-text-fill: #27ae60;                                   -fx-font-size: 13px;                                   -fx-font-weight: 600;" />
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </center>
+
+    <stylesheets>
+        <String fx:value="@../assign-account.css" />
+    </stylesheets>
+
+</BorderPane>

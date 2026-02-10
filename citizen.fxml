@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo4.controllers.CitizenController"
+            style="-fx-background-color: #f5f7fa;">
+
+    <top>
+        <TextField fx:id="searchField"
+                   promptText="🔍 Tìm theo tên hoặc CCCD..."
+                   style="-fx-padding: 10;"/>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <TableView fx:id="citizenTable" prefHeight="600">
+
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="colFullName" text="Họ tên" prefWidth="180"/>
+                    <TableColumn fx:id="colAlias" text="Tên khác" prefWidth="120"/>
+                    <TableColumn fx:id="colDob" text="Ngày sinh" prefWidth="120"/>
+                    <TableColumn fx:id="colPlaceOfBirth" text="Nơi sinh" prefWidth="140"/>
+                    <TableColumn fx:id="colHometown" text="Quê quán" prefWidth="140"/>
+                    <TableColumn fx:id="colEthnicity" text="Dân tộc" prefWidth="100"/>
+                    <TableColumn fx:id="colCccd" text="CCCD" prefWidth="140"/>
+                    <TableColumn fx:id="colCccdIssueDate" text="Ngày cấp CCCD" prefWidth="140"/>
+                    <TableColumn fx:id="colCccdIssuePlace" text="Nơi cấp CCCD" prefWidth="160"/>
+                    <TableColumn fx:id="colJob" text="Nghề nghiệp" prefWidth="160"/>
+                    <TableColumn fx:id="colWorkplace" text="Nơi làm việc" prefWidth="160"/>
+                    <TableColumn fx:id="colPreviousAddress" text="Địa chỉ trước" prefWidth="200"/>
+                    <TableColumn fx:id="colRegisterDate" text="Ngày đăng ký" prefWidth="140"/>
+                    <TableColumn fx:id="colHouseholder" text="Chủ hộ" prefWidth="90"/>
+                    <TableColumn fx:id="colRelation" text="Quan hệ" prefWidth="120"/>
+                    <TableColumn fx:id="colHouseholdId" text="Household ID" prefWidth="120"/>
+                    <TableColumn fx:id="colUserId" text="User ID" prefWidth="100"/>
+                </columns>
+
+            </TableView>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

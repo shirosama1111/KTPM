@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: #f5f7fa;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo4.controllers.HouseholdAdminController">
+
+    <top>
+        <VBox spacing="0" style="-fx-background-color: #f5f7fa;">
+            <padding>
+                <Insets bottom="10" left="30" right="30" top="25" />
+            </padding>
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 0 0 10 0;">
+                <Label style="-fx-font-size: 24px;" text="🏠" />
+                <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Quản Lý Hộ Khẩu (ADMIN)" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button onAction="#backToMenu" style="-fx-background-color: #ecf0f1;                                -fx-text-fill: #7f8c8d;                                -fx-font-size: 14px;                                -fx-font-weight: 600;                                -fx-background-radius: 6;                                -fx-padding: 8 15;                                -fx-cursor: hand;" text="🏠 Menu">
+                    <styleClass>
+                        <String fx:value="button-cancel" />
+                    </styleClass>
+                </Button>
+            </HBox>
+            <Separator style="-fx-background-color: #e0e6ed;" />
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" style="-fx-padding: 20 30 20 30; -fx-background-color: #f5f7fa;">
+            <TableView fx:id="table" style="-fx-background-color: white;                               -fx-border-color: #dce1e8;                               -fx-border-radius: 6;                               -fx-background-radius: 6;" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" prefWidth="60" text="ID" />
+                    <TableColumn fx:id="colOwner" prefWidth="250" text="Chủ Hộ" />
+                    <TableColumn fx:id="colAddress" prefWidth="350" text="Địa Chỉ" />
+                    <TableColumn fx:id="colMembers" prefWidth="120" text="Nhân Khẩu" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="12" style="-fx-padding: 15 30 25 30; -fx-background-color: #f5f7fa;">
+
+            <!-- HÀNG 1: Các nút chính -->
+            <HBox alignment="CENTER" spacing="12">
+                <Button onAction="#addHousehold" prefWidth="120" style="-fx-background-color: #27ae60;                            -fx-text-fill: white;                            -fx-font-size: 14px;                            -fx-font-weight: bold;                            -fx-background-radius: 6;                            -fx-padding: 12 20;                            -fx-cursor: hand;" text="➕ Thêm">
+                    <styleClass>
+                        <String fx:value="button-success" />
+                    </styleClass>
+                </Button>
+
+                <Button onAction="#editHousehold" prefWidth="120" style="-fx-background-color: #3498db;                            -fx-text-fill: white;                            -fx-font-size: 14px;                            -fx-font-weight: bold;                            -fx-background-radius: 6;                            -fx-padding: 12 20;                            -fx-cursor: hand;" text="✏ Sửa">
+                    <styleClass>
+                        <String fx:value="button-primary" />
+                    </styleClass>
+                </Button>
+
+                <Button onAction="#deleteHousehold" prefWidth="120" style="-fx-background-color: #e74c3c;                            -fx-text-fill: white;                            -fx-font-size: 14px;                            -fx-font-weight: bold;                            -fx-background-radius: 6;                            -fx-padding: 12 20;                            -fx-cursor: hand;" text="🗑 Xóa">
+                    <styleClass>
+                        <String fx:value="button-danger" />
+                    </styleClass>
+                </Button>
+
+                <Button onAction="#manageMembers" prefWidth="150" style="-fx-background-color: #f39c12;                            -fx-text-fill: white;                            -fx-font-size: 14px;                            -fx-font-weight: bold;                            -fx-background-radius: 6;                            -fx-padding: 12 20;                            -fx-cursor: hand;" text="👥 Thành Viên">
+                    <styleClass>
+                        <String fx:value="button-warning" />
+                    </styleClass>
+                </Button>
+
+                <Button onAction="#manageCitizens" prefWidth="180" style="-fx-background-color: #9b59b6;                            -fx-text-fill: white;                            -fx-font-size: 14px;                            -fx-font-weight: bold;                            -fx-background-radius: 6;                            -fx-padding: 12 20;                            -fx-cursor: hand;" text="👤 Quản Lý Cư Dân">
+                    <styleClass>
+                        <String fx:value="button-secondary" />
+                    </styleClass>
+                </Button>
+            </HBox>
+
+            <!-- HÀNG 2: Các nút bổ sung MỚI -->
+            <HBox alignment="CENTER" spacing="12">
+                <Button onAction="#splitHousehold" prefWidth="140" style="-fx-background-color: #e67e22;                            -fx-text-fill: white;                            -fx-font-size: 14px;                            -fx-font-weight: bold;                            -fx-background-radius: 6;                            -fx-padding: 12 20;                            -fx-cursor: hand;" text="✂️ Tách hộ">
+                    <styleClass>
+                        <String fx:value="button-orange" />
+                    </styleClass>
+                </Button>
+
+                <Button onAction="#viewCitizenHistory" prefWidth="160" style="-fx-background-color: #16a085;                            -fx-text-fill: white;                            -fx-font-size: 14px;                            -fx-font-weight: bold;                            -fx-background-radius: 6;                            -fx-padding: 12 20;                            -fx-cursor: hand;" text="📜 Lịch sử">
+                    <styleClass>
+                        <String fx:value="button-info" />
+                    </styleClass>
+                </Button>
+
+                <Button onAction="#openTemporaryRecords" prefWidth="180" style="-fx-background-color: #34495e;                            -fx-text-fill: white;                            -fx-font-size: 14px;                            -fx-font-weight: bold;                            -fx-background-radius: 6;                            -fx-padding: 12 20;                            -fx-cursor: hand;" text="🏠 Tạm vắng/trú">
+                    <styleClass>
+                        <String fx:value="button-dark" />
+                    </styleClass>
+                </Button>
+
+                <Button onAction="#manageHomelessCitizens" prefWidth="240" style="-fx-background-color: #c0392b;                            -fx-text-fill: white;                            -fx-font-size: 14px;                            -fx-font-weight: bold;                            -fx-background-radius: 6;                            -fx-padding: 12 20;                            -fx-cursor: hand;" text="🏚 Cư Dân Chưa Có Nơi Cư Trú">
+                    <styleClass>
+                        <String fx:value="button-homeless" />
+                    </styleClass>
+                </Button>
+            </HBox>
+        </VBox>
+    </bottom>
+
+    <stylesheets>
+        <String fx:value="../../../css/household_admin.css" />
+    </stylesheets>
+
+</BorderPane>

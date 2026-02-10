@@ -1,0 +1,53 @@
+/* ===== Root ===== */
+.root {
+    -fx-font-family: "Segoe UI", "Arial";
+    -fx-background-color: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+}
+
+/* ===== Form container ===== */
+.vbox {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 30;
+    -fx-spacing: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 5);
+}
+
+/* ===== Title ===== */
+.title-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* ===== Inputs ===== */
+.text-field,
+.password-field,
+.choice-box {
+    -fx-pref-height: 38;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #ced4da;
+    -fx-border-width: 1;
+    -fx-padding: 0 10;
+}
+
+.text-field:focused,
+.password-field:focused,
+.choice-box:focused {
+    -fx-border-color: #FFFF00;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+    -fx-pref-width: 120;
+    -fx-pref-height: 38;
+    -fx-background-radius: 8;
+    -fx-background-color: #4dabf7;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #339af0;
+}

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demo4.controllers.StatisticsController"
+      spacing="15" style="-fx-background-color: #f5f5f5;">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <!-- HEADER -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="📊 THỐNG KÊ NHÂN KHẨU" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="📄 Xuất báo cáo" onAction="#exportReport"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        <Button text="⬅️ Quay lại" onAction="#backToMenu"/>
+    </HBox>
+
+    <Separator/>
+
+    <!-- TỔNG QUAN -->
+    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">
+        <Label text="📈 TỔNG QUAN" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+        <GridPane hgap="30" vgap="15">
+            <Label text="Tổng số công dân:" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                   style="-fx-font-size: 14px;"/>
+            <Label fx:id="lblTotalCitizens" text="0" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2196F3;"/>
+
+            <Label text="Nam:" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                   style="-fx-font-size: 14px;"/>
+            <Label fx:id="lblMale" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2196F3;"/>
+
+            <Label text="Nữ:" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                   style="-fx-font-size: 14px;"/>
+            <Label fx:id="lblFemale" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #E91E63;"/>
+        </GridPane>
+    </VBox>
+
+    <!-- BIỂU ĐỒ -->
+    <HBox spacing="15" VBox.vgrow="ALWAYS">
+        <!-- Biểu đồ độ tuổi -->
+        <VBox spacing="5" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;"
+              HBox.hgrow="ALWAYS">
+            <Label text="📊 Phân bố theo độ tuổi" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <BarChart fx:id="chartAge" legendVisible="false" VBox.vgrow="ALWAYS">
+                <xAxis>
+                    <CategoryAxis fx:id="xAxisAge" label="Nhóm tuổi"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="yAxisAge" label="Số người"/>
+                </yAxis>
+            </BarChart>
+        </VBox>
+
+        <!-- Biểu đồ giới tính -->
+        <VBox spacing="5" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;"
+              prefWidth="350">
+            <Label text="📊 Phân bố giới tính" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <PieChart fx:id="chartGender" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </HBox>
+
+    <!-- TẠM VẮNG TẠM TRÚ -->
+    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 5;">
+        <Label text="🏠 THỐNG KÊ TẠM VẮNG / TẠM TRÚ" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Từ ngày:"/>
+            <DatePicker fx:id="dpStartDate" prefWidth="150"/>
+            <Label text="Đến ngày:"/>
+            <DatePicker fx:id="dpEndDate" prefWidth="150"/>
+            <Button text="🔍 Lọc" onAction="#loadTemporaryRecords"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+        </HBox>
+
+        <GridPane hgap="30" vgap="10">
+            <Label text="Tạm vắng:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Label fx:id="lblTamVang" text="0" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #FF9800;"/>
+
+            <Label text="Tạm trú:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <Label fx:id="lblTamTru" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4CAF50;"/>
+        </GridPane>
+
+        <TableView fx:id="tableTempRecords" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="colCitizenName" text="Công dân" prefWidth="200"/>
+                <TableColumn fx:id="colType" text="Loại" prefWidth="100"/>
+                <TableColumn fx:id="colStartDate" text="Từ ngày" prefWidth="120"/>
+                <TableColumn fx:id="colEndDate" text="Đến ngày" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+</VBox>

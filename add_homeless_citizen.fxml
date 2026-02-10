@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import java.lang.String?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.demo4.controllers.AddHomelessCitizenController"
+      spacing="0"
+      style="-fx-background-color: #f5f7fa;">
+
+    <padding>
+        <Insets top="25" right="30" bottom="25" left="30"/>
+    </padding>
+
+    <!-- Header -->
+    <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 0 0 20 0;">
+        <Label text="🆘" style="-fx-font-size: 24px;"/>
+        <Label text="Thêm Công Dân Chưa Có Nơi Cư Trú"
+               style="-fx-font-size: 22px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #2c3e50;"/>
+    </HBox>
+
+    <Separator style="-fx-background-color: #e0e6ed; -fx-padding: 0 0 20 0;"/>
+
+    <!-- Form -->
+    <VBox spacing="18">
+
+        <!-- Họ và tên -->
+        <VBox spacing="6">
+            <Label text="Họ và tên *"
+                   style="-fx-font-size: 13px;
+                          -fx-font-weight: 600;
+                          -fx-text-fill: #34495e;"/>
+            <TextField fx:id="tfFullName"
+                       promptText="Nhập họ và tên đầy đủ"
+                       style="-fx-background-color: white;
+                              -fx-border-color: #dce1e8;
+                              -fx-border-radius: 6;
+                              -fx-background-radius: 6;
+                              -fx-padding: 10 12;
+                              -fx-font-size: 13px;
+                              -fx-prompt-text-fill: #95a5a6;">
+                <styleClass>
+                    <String fx:value="text-field-custom"/>
+                </styleClass>
+            </TextField>
+        </VBox>
+
+        <!-- Ngày sinh -->
+        <VBox spacing="6">
+            <Label text="Ngày sinh *"
+                   style="-fx-font-size: 13px;
+                          -fx-font-weight: 600;
+                          -fx-text-fill: #34495e;"/>
+            <DatePicker fx:id="dpDob"
+                        promptText="Chọn ngày sinh"
+                        style="-fx-background-color: white;
+                               -fx-border-color: #dce1e8;
+                               -fx-border-radius: 6;
+                               -fx-background-radius: 6;
+                               -fx-padding: 6 12;
+                               -fx-font-size: 13px;">
+                <styleClass>
+                    <String fx:value="date-picker-custom"/>
+                </styleClass>
+            </DatePicker>
+        </VBox>
+
+        <!-- CCCD -->
+        <VBox spacing="6">
+            <Label text="Số CCCD *"
+                   style="-fx-font-size: 13px;
+                          -fx-font-weight: 600;
+                          -fx-text-fill: #34495e;"/>
+            <TextField fx:id="tfCccd"
+                       promptText="Nhập số CCCD 12 chữ số"
+                       style="-fx-background-color: white;
+                              -fx-border-color: #dce1e8;
+                              -fx-border-radius: 6;
+                              -fx-background-radius: 6;
+                              -fx-padding: 10 12;
+                              -fx-font-size: 13px;
+                              -fx-prompt-text-fill: #95a5a6;">
+                <styleClass>
+                    <String fx:value="text-field-custom"/>
+                </styleClass>
+            </TextField>
+        </VBox>
+
+        <!-- Nghề nghiệp -->
+        <VBox spacing="6">
+            <Label text="Nghề nghiệp"
+                   style="-fx-font-size: 13px;
+                          -fx-font-weight: 600;
+                          -fx-text-fill: #34495e;"/>
+            <TextField fx:id="tfJob"
+                       promptText="VD: Lao động tự do, Không có..."
+                       style="-fx-background-color: white;
+                              -fx-border-color: #dce1e8;
+                              -fx-border-radius: 6;
+                              -fx-background-radius: 6;
+                              -fx-padding: 10 12;
+                              -fx-font-size: 13px;
+                              -fx-prompt-text-fill: #95a5a6;">
+                <styleClass>
+                    <String fx:value="text-field-custom"/>
+                </styleClass>
+            </TextField>
+        </VBox>
+
+    </VBox>
+
+    <!-- Spacer -->
+    <Region VBox.vgrow="ALWAYS" minHeight="20"/>
+
+    <!-- Buttons -->
+    <HBox spacing="12" alignment="CENTER" style="-fx-padding: 15 0 0 0;">
+        <Button text="✓ Lưu"
+                onAction="#save"
+                prefWidth="120"
+                style="-fx-background-color: #27ae60;
+                       -fx-text-fill: white;
+                       -fx-font-size: 14px;
+                       -fx-font-weight: bold;
+                       -fx-background-radius: 6;
+                       -fx-padding: 12 20;
+                       -fx-cursor: hand;">
+            <styleClass>
+                <String fx:value="button-success"/>
+            </styleClass>
+        </Button>
+
+        <Button text="✕ Hủy"
+                onAction="#cancel"
+                prefWidth="120"
+                style="-fx-background-color: #ecf0f1;
+                       -fx-text-fill: #7f8c8d;
+                       -fx-font-size: 14px;
+                       -fx-font-weight: 600;
+                       -fx-background-radius: 6;
+                       -fx-padding: 12 20;
+                       -fx-cursor: hand;">
+            <styleClass>
+                <String fx:value="button-cancel"/>
+            </styleClass>
+        </Button>
+    </HBox>
+
+    <!-- Note -->
+    <Label text="* Trường bắt buộc"
+           style="-fx-font-size: 11px;
+                  -fx-text-fill: #95a5a6;
+                  -fx-padding: 15 0 0 0;"/>
+
+    <!-- Message -->
+    <Label fx:id="lblMessage"
+           style="-fx-text-fill: #e74c3c;
+                  -fx-font-size: 12px;
+                  -fx-font-weight: 600;
+                  -fx-padding: 15 0 0 0;"/>
+
+    <stylesheets>
+        <String fx:value="@/com/example/demo4/css/add_homeless_citizen.css"/>
+    </stylesheets>
+
+</VBox>
